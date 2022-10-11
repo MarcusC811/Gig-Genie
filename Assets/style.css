@@ -5,9 +5,12 @@ body {
 
 #map {
     position:absolute;
-    top: 0;
-    bottom:0;
-    width:75%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    margin-right: 10%;
+    /* margin: 3%; */
+    width: 70%;
     height: 25%;
 }
 
@@ -15,4 +18,8 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.leaflet-popup-content img {
+    max-width: 100%;
 }

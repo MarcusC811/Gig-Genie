@@ -8,14 +8,29 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=" rel="stylesheet">
-    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/icon?family=Raleway" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
     <!-- Nav Bar -->
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="right">
+                <li>Link1</li>
+                <li>Link2</li>
+                <li>Link3</li>
+            </ul>
+        </div>
+    </nav>
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
-    <div id='map'></div>
+    <div class="container">
+        <div id='map' class="dark"></div>
+    </div>
 
     <!-- class="input-field col s6" -->
     <div class="row">
@@ -23,12 +38,12 @@
             <div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="first_name">First Name</label>
+                        <label for="first_name">Artist Name</label>
                         <input id="first_name" type="text" class="validate">
                     </div>
 
                     <div class="input-field col s6">
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name">Genre</label>
                         <input id="last_name" type="text" class="validate">
                     </div>
 
@@ -50,7 +65,7 @@
                     <p class="col s6">
                         <label>
                           <input type="checkbox" class="filled-in"/>
-                          <span>Drums</span>
+                          <span>Vocals</span>
                         </label>
                     </p>
                     <p class="col s6">
@@ -62,25 +77,25 @@
                     <p class="col s6">
                         <label>
                           <input type="checkbox" class="filled-in"/>
-                          <span>Piano</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Saxophone</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Vocals</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
                           <span>Bass</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Drums</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Keys</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Brass</span>
                         </label>
                     </p>
                 </div>
@@ -91,7 +106,6 @@
     <footer>
         
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <script src="./Assets/script.js"></script>
