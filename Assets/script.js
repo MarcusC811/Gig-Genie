@@ -1,5 +1,4 @@
 var submitButton = document.getElementById('subBtn');
-var i = 0;
 mapboxgl.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -96,11 +95,12 @@ function saveData(event) {
     var emailIn = document.getElementById('email').value;
     var locationIn = document.getElementById('location').value;
     var data = {Name: artistName, Genre: genreName, Email: emailIn, Location: locationIn};
-    localStorage.setItem('Data' + i, JSON.stringify(data));
+    localStorage.setItem('Data' + artistName, JSON.stringify(data));
     alert("saved");
-    i++;
     form.reset();
 }
 
 
 submitButton.addEventListener("click", saveData);
+
+$('.dropdown-trigger').dropdown();
