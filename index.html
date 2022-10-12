@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gig Genie</title>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Raleway" rel="stylesheet">
@@ -38,13 +38,13 @@
             <div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <label for="first_name">Artist Name</label>
-                        <input id="first_name" type="text" class="validate">
+                        <label for="artist_name">Artist Name</label>
+                        <input id="artist_name" type="text" class="validate">
                     </div>
 
                     <div class="input-field col s6">
-                        <label for="last_name">Genre</label>
-                        <input id="last_name" type="text" class="validate">
+                        <label for="Genre">Genre</label>
+                        <input id="Genre" type="text" class="validate">
                     </div>
 
                 </div>
@@ -54,10 +54,10 @@
                         <label for="email">Email</label>
                         <input id="email" type="text" class="validate">
                     </div>
-
+                    <!-- Timeslots -->
                     <div class="input-field col s6">
-                        <label for="phone-number">Phone Number</label>
-                        <input id="phone-number" type="text" class="validate">
+                        <label for="location">Location</label>
+                        <input id="location" type="text" class="validate">
                     </div>
                 </div>
 
@@ -95,9 +95,15 @@
                     <p class="col s6">
                         <label>
                           <input type="checkbox" class="filled-in"/>
-                          <span>Brass</span>
+                          <span>Bass</span>
                         </label>
                     </p>
+                </div>
+
+                <div id="submitBtnDiv">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="subBtn">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </div>
         </form>
