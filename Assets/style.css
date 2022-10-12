@@ -1,0 +1,45 @@
+body { 
+    margin:0;
+    padding:0;
+}
+
+#map {
+    position:absolute;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    margin-right: 10%;
+    /* margin: 3%; */
+    width: 70%;
+    height: 25%;
+}
+
+#application{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.leaflet-popup-content img {
+    max-width: 100%;
+}
+
+.info-cards {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding: 50px 5px;
+}
+
+.activator {
+    height: 150px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.card-content {
+    height: 50px;
+}
+
+.card { width:250px;
+    height: 300px;
+}

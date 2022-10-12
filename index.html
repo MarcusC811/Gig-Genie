@@ -8,63 +8,161 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=" rel="stylesheet">
-    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/icon?family=Raleway" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
     <!-- Nav Bar -->
-
-    <!--Map-->
-
-    <!--GIG-->
-    <div class="card-left">
-        <div class="row">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Insert venue name</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>GIG1</p>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card-center">
-        <div class="row">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Insert venue name</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p> GIG2</p>
-            </div>
-          </div>
-      </div>
-    </div>
-
-    <div class="card-right">
-        <div class="row">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Insert venue name</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>GIG 3</p>
-            </div>
-          </div>
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="right">
+                <li>Link1</li>
+                <li>Link2</li>
+                <li>Link3</li>
+            </ul>
         </div>
-    </div>
-    <!-- End of GIG-->
-   
-    <!--App-->
+    </nav>
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+    <div class="container">
+        <div id='map' class="dark"></div>
+    </div>
+
+    <!-- class="input-field col s6" -->
+    <div class="row">
+        <form class="col s12" id="application">
+            <div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="first_name">Artist Name</label>
+                        <input id="first_name" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="last_name">Genre</label>
+                        <input id="last_name" type="text" class="validate">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="phone-number">Location</label>
+                        <input id="phone-number" type="text" class="validate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Vocals</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Guitar</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Bass</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Drums</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Keys</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                          <input type="checkbox" class="filled-in"/>
+                          <span>Brass</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--gigs-->
+    <section class="info-cards">
+       <div class="row">
+                <div class="col s12 m12 l4">  <div class="card">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="Assets/img/item1.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">Click to open</i></span>
+                          <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        </div>
+                      </div>
+                </div>
+         </div>
+          <div class="row">
+                <div class="col s12 m12 l4">  <div class="card">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="Assets/img/item2.jpg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">Click to open</i></span>
+                          <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col s12 m12 l4">  <div class="card">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="Assets/img/item3.jpg">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">Click to open</i></span>
+                      <p></p>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+       </div>
+       
+
+    </section>
+
+    <footer>
+        
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <script src="./Assets/script.js"></script>
