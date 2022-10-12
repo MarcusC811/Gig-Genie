@@ -9,17 +9,17 @@ const map = new mapboxgl.Map({
 
     const marker1 = new mapboxgl.Marker()
     .setLngLat([-86.7905, 33.5054])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>The Nick - Birmingham, AL</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Nick</h6><ul><li>2514 10th Ave S, Birmingham, AL 35205</li><li>Open Mics: <ul><li>Monday 7pm-11pm</li><li>Thursday 7pm-11pm</ul></li></ul>"))
     .addTo(map); 
 
     const marker2 = new mapboxgl.Marker()
     .setLngLat([-86.8169, 36.1021])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>The Bluebird Cafe - Nashville, TN</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Bluebird Cafe</h6><ul><li>4104 Hillsboro Pike, Nashville, TN 37215</li><li>Open Mics: <ul><li>Monday 6pm-10pm</li></ul></li></ul>"))
     .addTo(map);
 
     const marker3 = new mapboxgl.Marker()
     .setLngLat([-84.3688, 33.7976])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>Smith's Olde Bar - Atlanta, GA</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul>"))
     .addTo(map);
  
 /* Given a query in the form "lng, lat" or "lat, lng"
