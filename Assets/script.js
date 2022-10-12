@@ -5,9 +5,24 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-86.7796, 33.5436],
-    zoom: 8
+    center: [-85.3094, 35.0458],
+    zoom: 5
     });
+
+    const marker1 = new mapboxgl.Marker()
+    .setLngLat([-86.7905, 33.5054])
+    .setPopup(new mapboxgl.Popup().setHTML("<p>The Nick - Birmingham, AL</p>"))
+    .addTo(map); 
+
+    const marker2 = new mapboxgl.Marker()
+    .setLngLat([-86.8169, 36.1021])
+    .setPopup(new mapboxgl.Popup().setHTML("<p>The Bluebird Cafe - Nashville, TN</p>"))
+    .addTo(map);
+
+    const marker3 = new mapboxgl.Marker()
+    .setLngLat([-84.3688, 33.7976])
+    .setPopup(new mapboxgl.Popup().setHTML("<p>Smith's Olde Bar - Atlanta, GA</p>"))
+    .addTo(map);
  
 /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
