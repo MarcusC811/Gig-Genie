@@ -1,7 +1,14 @@
-L.mapbox.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
-var map = L.mapbox.map('map')
-    .setView([36.1627, -86.7816], 11)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+<div id='application' class='modal modal-fixed-footer'><div class='modal-content'><h4>Modal Header</h4><p>A bunch of text</p></div><div class='modal-footer'><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Agree</a></div></div>
+
+
+
+
+
+
+// L.mapbox.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
+// var map = L.mapbox.map('map')
+//     .setView([36.1627, -86.7816], 11)
+//     .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
 
 // var myLayer = L.mapbox.featureLayer().addTo(map);
 

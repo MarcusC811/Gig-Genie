@@ -35,116 +35,72 @@
         <div id='map' class="dark"></div>
     </div> 
 
-    <!-- class="input-field col s6" -->
-     <div class="row">
-        <form class="col s12" id="application">
-            <div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="artist_name">Artist Name</label>
-                        <input id="artist_name" type="text" class="validate">
+<!-- class="input-field col s6" -->
+<!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Open Mic Sign Up</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row modal-form-row">
+                        <div class="input-field col s12">
+                            <input id="artist_name" type="text" class="validate">
+                            <label for="artist_name">Artist Name</label>
+                        </div>
                     </div>
-
-                    <div class="btn-group dropdown-center">
-                      <button type="button" id="timeText" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropend
-                      </button>
-                      <ul class="dropdown-menu">
-                        <!-- Dropdown menu links -->
-                        <li class="dropdown-item">7PM</li>
-                        <li class="dropdown-item">7:30PM</li>
-                        <li class="dropdown-item">8PM</li>
-                        <li class="dropdown-item selecteditem">8:30PM</li>
-                        <li class="dropdown-item">9PM</li>
-                        <li class="dropdown-item ">9:30PM</li>
-                      </ul>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="genre" type="text" class="validate">
+                            <label for="genre">Genre</label>
+                        </div>
+                    </div>       
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate"></textarea>
+                            <label for="email">Email</label>
+                        </div>
                     </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="email">Email</label>
-                        <input id="email" type="text" class="validate">
+                    <div class="input-field col s12">
+                        <select>
+                          <optgroup label="The Nick">
+                            <option value="1">Monday</option>
+                            <option value="2">Thursday</option>
+                          </optgroup>
+                          <optgroup label="Smith's Olde Bar">
+                            <option value="3">Monday</option>
+                            <option value="4">Wednesday</option>
+                          </optgroup>
+                          <optgroup label="The Bluebird Cafe">
+                            <option value="5">Monday</option>
+                          </optgroup>
+                        </select>
+                        <label>Open Mic</label>
                     </div>
-                    <!-- Timeslots -->
-                    <div class="input-field col s6">
-                        <label for="location">Location</label>
-                        <input id="location" type="text" class="validate">
+                    <div class="input-field col s12">
+                        <select multiple>
+                          <option value="6">Vocals</option>
+                          <option value="7">Guitar</option>
+                          <option value="8">Bass</option>
+                          <option value="9">Drums</option>
+                        </select>
+                        <label>Instrument(s)</label>
                     </div>
-                </div>
-
-                <div class="row">
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Vocals</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" id="'accept" class="filled-in"/>
-                          <span>Guitar</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Bass</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Drums</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Keys</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Bass</span>
-                        </label>
-                    </p>
-                </div>
-
-                <div id="submitBtnDiv">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="subBtn">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
+                        
+                    <div class="modal-footer">
+                        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div> 
-    <!-- Footer -->
-    <!-- <footer class="page-footer"> -->
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
         </div>
-         <div class="col l4 offset-l2 s12"> 
-        </div>
-      </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2022 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">Contact us</a>
-      </div>
-    </div>
-    <footer class="page-footer">
-  </footer> --> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-  <script src="./Assets/script.js"></script>
+
+    <footer>
+        
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <script src="./Assets/script.js"></script>
 </body>
 </html>
