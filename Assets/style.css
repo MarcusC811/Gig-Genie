@@ -5,7 +5,7 @@ body {
 
 #map {
     position:absolute;
-    margin-top: 5%;
+    margin-top: 10px;
     margin-bottom: 5%;
     margin-left: 0%;
     margin-right: 10%;
@@ -33,13 +33,15 @@ body {
 .activator {
     height: 150px;
     overflow: hidden;
-    max-width: 100%;
+    max-width: 80%%;
 }
 
 .card-content {
-    height: 50px;
+    height: 10px;
+    nav-down: 100px;
 }
 
-.card { width:250px;
-    height: 300px;
+.info-wrapper{
+        max-height: 50%;
 }
+
