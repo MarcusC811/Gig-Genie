@@ -9,17 +9,17 @@ const map = new mapboxgl.Map({
 
     const marker1 = new mapboxgl.Marker()
     .setLngLat([-86.7905, 33.5054])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>The Nick - Birmingham, AL</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Nick</h6><ul><li>2514 10th Ave S, Birmingham, AL 35205</li><li>Open Mics: <ul><li>Monday 7pm-11pm</li><li>Thursday 7pm-11pm</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal1'>Sign Up</a>"))
     .addTo(map); 
 
     const marker2 = new mapboxgl.Marker()
     .setLngLat([-86.8169, 36.1021])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>The Bluebird Cafe - Nashville, TN</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Bluebird Cafe</h6><ul><li>4104 Hillsboro Pike, Nashville, TN 37215</li><li>Open Mics: <ul><li>Monday 6pm-10pm</li></ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal2'>Sign Up</a>"))
     .addTo(map);
 
     const marker3 = new mapboxgl.Marker()
     .setLngLat([-84.3688, 33.7976])
-    .setPopup(new mapboxgl.Popup().setHTML("<p>Smith's Olde Bar - Atlanta, GA</p>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal3'>Sign Up</a>"))
     .addTo(map);
  
 /* Given a query in the form "lng, lat" or "lat, lng"
@@ -84,7 +84,32 @@ const map = new mapboxgl.Map({
         })
 );
 
-// gig dynamic 
-var popUp =  document.createElement('div');
+(function($){
+    $.fn.leanModal = function(options) {
+      if( $('.modal').length > 0 ){
+          $('.modal').modal(options);
+      }
+    };
+  
+    $.fn.openModal = function(options) {
+      $(this).modal(options);
+      $(this).modal('open');
+    };
+  
+    $.fn.closeModal = function() {
+      $(this).modal('close');
+    };
+  })(jQuery);
 
-popUp.querySelector
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+  $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });

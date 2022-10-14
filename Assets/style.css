@@ -28,8 +28,7 @@ body {
     padding-left: 50px;
     padding-right: 50px;
     padding: 50px 5px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 250px;
 }
 
 .activator {
@@ -40,7 +39,7 @@ body {
 
 .card-content {
     height: 10px;
-    nav-down: 100px;
+    nav-down: 100%;
 }
 
 .info-wrapper{
