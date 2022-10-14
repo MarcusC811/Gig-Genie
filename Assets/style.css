@@ -28,6 +28,8 @@ body {
     padding-left: 50px;
     padding-right: 50px;
     padding: 50px 5px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .activator {
@@ -42,6 +44,6 @@ body {
 }
 
 .info-wrapper{
-        max-height: 50%;
+        max-height: 600px
 }
 

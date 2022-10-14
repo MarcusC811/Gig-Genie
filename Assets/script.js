@@ -83,3 +83,8 @@ const map = new mapboxgl.Map({
         reverseGeocode: true
         })
 );
+
+// gig dynamic 
+var popUp =  document.createElement('div');
+
+popUp.querySelector
