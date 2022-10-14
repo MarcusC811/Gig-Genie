@@ -96,7 +96,7 @@ function saveData(event) {
     var emailIn = document.getElementById('email').value;
     var locationIn = document.getElementById('location').value;
     const cb = document.querySelector('#accept');
-    console.log(cb.checked);
+    console.log(cb !== null);
     var data = {Name: artistName, Time: genreName, Email: emailIn, Location: locationIn};
     localStorage.setItem('Data' + artistName, JSON.stringify(data));
     alert("saved");
