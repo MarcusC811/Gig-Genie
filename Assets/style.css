@@ -3,6 +3,11 @@ body {
     padding:0;
 }
 
+
+.modal {
+    max-height: 80%;
+}
+
 #map {
     position:absolute;
     margin-top: 5%;

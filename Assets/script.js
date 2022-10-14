@@ -19,8 +19,7 @@ const map = new mapboxgl.Map({
 
     const marker3 = new mapboxgl.Marker()
     .setLngLat([-84.3688, 33.7976])
-    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#application'>Sign Up</a><!-- Modal Structure --><div id='application' class='modal modal-fixed-footer'><div class='modal-content'><h4>Modal Header</h4><p>A bunch of text</p></div><div class='modal-footer'><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Agree</a></div></div>"))
-    .addTo(map);
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal1'>Sign Up</a>")).addTo(map);
  
 /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
@@ -83,3 +82,25 @@ const map = new mapboxgl.Map({
         reverseGeocode: true
         })
 );
+
+(function($){
+    $.fn.leanModal = function(options) {
+      if( $('.modal').length > 0 ){
+          $('.modal').modal(options);
+      }
+    };
+  
+    $.fn.openModal = function(options) {
+      $(this).modal(options);
+      $(this).modal('open');
+    };
+  
+    $.fn.closeModal = function() {
+      $(this).modal('close');
+    };
+  })(jQuery);
+
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });

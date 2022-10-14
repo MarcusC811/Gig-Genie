@@ -32,80 +32,45 @@
         <div id='map' class="dark"></div>
     </div>
 
-    <!-- class="input-field col s6" -->
-    <div class="row">
-        <form class="col s12" id="application">
-            <div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="first_name">Artist Name</label>
-                        <input id="first_name" type="text" class="validate">
+<!-- class="input-field col s6" -->
+    <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</button>
+<!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Add an Image</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row modal-form-row">
+                        <div class="input-field col s12">
+                            <input id="image_url" type="text" class="validate">
+                            <label for="image_url">Image URL</label>
+                        </div>
                     </div>
-
-                    <div class="input-field col s6">
-                        <label for="last_name">Genre</label>
-                        <input id="last_name" type="text" class="validate">
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="email">Email</label>
-                        <input id="email" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s6">
-                        <label for="phone-number">Location</label>
-                        <input id="phone-number" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Vocals</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Guitar</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Bass</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Drums</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Keys</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Brass</span>
-                        </label>
-                    </p>
-                </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="image_title" type="text" class="validate">
+                            <label for="image_title">Title</label>
+                        </div>
+                    </div>       
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="image_description" type="text" class="materialize-textarea validate"></textarea>
+                            <label for="image_description">Description</label>
+                        </div>
+                    </div>             
+                </form>
             </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        </div>
     </div>
 
     <footer>
         
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
     <script src="./Assets/script.js"></script>
