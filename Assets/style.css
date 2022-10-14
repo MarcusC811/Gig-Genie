@@ -30,3 +30,9 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.btn-group {
+    width: 50%;
+    padding-left: 15%;
+    padding-right: 15%;
+}

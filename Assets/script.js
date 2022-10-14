@@ -1,3 +1,4 @@
+var timeText = document.getElementById('timeText');
 var submitButton = document.getElementById('subBtn');
 mapboxgl.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
 const map = new mapboxgl.Map({
@@ -91,16 +92,21 @@ function saveData(event) {
     const form = document.getElementById('application');
     event.preventDefault();
     var artistName = document.getElementById('artist_name').value;
-    var genreName = document.getElementById('Genre').value;
+    var genreName = document.getElementById('timeText').innerText;
     var emailIn = document.getElementById('email').value;
     var locationIn = document.getElementById('location').value;
-    var data = {Name: artistName, Genre: genreName, Email: emailIn, Location: locationIn};
+    const cb = document.querySelector('#accept');
+    console.log(cb.checked);
+    var data = {Name: artistName, Time: genreName, Email: emailIn, Location: locationIn};
     localStorage.setItem('Data' + artistName, JSON.stringify(data));
     alert("saved");
     form.reset();
 }
 
 
-submitButton.addEventListener("click", saveData);
+function change(event) {
+    timeText.innerText = event.target.innerText;
+}
 
-$('.dropdown-trigger').dropdown();
+$('.dropdown-item').on("click", change)
+submitButton.addEventListener("click", saveData);
