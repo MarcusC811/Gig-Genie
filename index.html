@@ -33,37 +33,62 @@
     </div>
 
 <!-- class="input-field col s6" -->
-    <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</button>
 <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Add an Image</h4>
+            <h4>Open Mic Sign Up</h4>
 
             <div class="row">
                 <form class="col s12">
                     <div class="row modal-form-row">
                         <div class="input-field col s12">
-                            <input id="image_url" type="text" class="validate">
-                            <label for="image_url">Image URL</label>
+                            <input id="artist_name" type="text" class="validate">
+                            <label for="artist_name">Artist Name</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="image_title" type="text" class="validate">
-                            <label for="image_title">Title</label>
+                            <input id="genre" type="text" class="validate">
+                            <label for="genre">Genre</label>
                         </div>
                     </div>       
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="image_description" type="text" class="materialize-textarea validate"></textarea>
-                            <label for="image_description">Description</label>
+                            <input id="email" type="text" class="validate"></textarea>
+                            <label for="email">Email</label>
                         </div>
-                    </div>             
+                    </div>
+                    <div class="input-field col s12">
+                        <select>
+                          <optgroup label="The Nick">
+                            <option value="1">Monday</option>
+                            <option value="2">Thursday</option>
+                          </optgroup>
+                          <optgroup label="Smith's Olde Bar">
+                            <option value="3">Monday</option>
+                            <option value="4">Wednesday</option>
+                          </optgroup>
+                          <optgroup label="The Bluebird Cafe">
+                            <option value="5">Monday</option>
+                          </optgroup>
+                        </select>
+                        <label>Open Mic</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select multiple>
+                          <option value="6">Vocals</option>
+                          <option value="7">Guitar</option>
+                          <option value="8">Bass</option>
+                          <option value="9">Drums</option>
+                        </select>
+                        <label>Instrument(s)</label>
+                    </div>
+                        
+                    <div class="modal-footer">
+                        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+                    </div>
                 </form>
             </div>
-        </div>
-        <div class="modal-footer">
-            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
         </div>
     </div>
 
