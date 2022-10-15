@@ -28,6 +28,10 @@ body {
     margin-bottom: 48%;
 }
 
+#nick-carousel-text {
+    margin-bottom: 70%;
+}
+
 #application{
     position: absolute;
     bottom: 0;
