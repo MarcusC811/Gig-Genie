@@ -17,13 +17,14 @@
     <!-- Nav Bar -->
     <nav>
         <div class="nav-wrapper">
-            <ul class="right">
-                <li>Link1</li>
-                <li>Link2</li>
-                <li>Link3</li>
-            </ul>
+          <a href="#" class="brand-logo">Gig Genie</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Birmingham</a></li>
+            <li><a href="badges.html">Nashville</a></li>
+            <li><a href="collapsible.html">Atlanta</a></li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
@@ -123,10 +124,10 @@
                         <select>
                           <optgroup label="Monday">
                             <option value="1">Mon 6pm-7pm</option>
-                            <option value="1">Mon 7pm-8pm</option>
-                            <option value="2">Mon 8pm-9pm</option>
-                            <option value="3">Mon 9pm-10pm</option>
-                            <option value="4">Mon 10pm-11pm</option>
+                            <option value="2">Mon 7pm-8pm</option>
+                            <option value="3">Mon 8pm-9pm</option>
+                            <option value="4">Mon 9pm-10pm</option>
+                            <option value="5">Mon 10pm-11pm</option>
                           </optgroup>
                         </select>
                         <label>Timeslots</label>
@@ -189,17 +190,17 @@
                             <option value="6">Wed 8pm-9pm</option>
                             <option value="7">Wed 9pm-10pm</option>
                             <option value="8">Wed 10pm-11pm</option>
-                            <option value="4">Wed 11pm-12am</option>
+                            <option value="9">Wed 11pm-12am</option>
                           </optgroup>
                         </select>
                         <label>Timeslots</label>
                     </div>
                     <div class="input-field col s12">
                         <select multiple>
-                          <option value="6">Vocals</option>
-                          <option value="7">Guitar</option>
-                          <option value="8">Bass</option>
-                          <option value="9">Drums</option>
+                          <option value="10">Vocals</option>
+                          <option value="11">Guitar</option>
+                          <option value="12">Bass</option>
+                          <option value="13">Drums</option>
                         </select>
                         <label>Instrument(s)</label>
                     </div>
@@ -211,10 +212,45 @@
             </div>
         </div>
     </div>
+<!--Carousel-->
+    <div id="carousel" class="container">
+        <div class="carousel carousel-slider center">
+            <div class="carousel-fixed-item center">
+              <a class="btn waves-effect white grey-text darken-text-2">Sign Up</a>
+            </div>
+            <div class="carousel-item black-text" href="#one!">
+              <h2>The Bluebird Cafe</h2>
+              <img src="./Assets/Images/Bluebird.jpg" class="center-align">
+              <p id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982.[1] The club features acoustic music performed by both established singer-songwriters, and cover artists.</p>
+            </div>
+            <div class="carousel-item amber white-text" href="#two!">
+              <h2>Second Panel</h2>
+              <p class="white-text">This is your second panel</p>
+            </div>
+            <div class="carousel-item green white-text" href="#three!">
+              <h2>Third Panel</h2>
+              <p class="white-text">This is your third panel</p>
+            </div>
+          </div>
+    </div>
 
-    <footer>
-        
-    </footer>
+<!-- Footer -->
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+          <h5 class="white-text center">Gig Genie - where the magic happens!</h5>
+        </div>
+         <div class="col l4 offset-l2 s12"> 
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2022 Gig Genie
+      <a class="grey-text text-lighten-4 right" href="#!">Contact Us</a>
+      </div>
+    </div>
+  </footer> 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>

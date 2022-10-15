@@ -1,6 +1,79 @@
 <div id='application' class='modal modal-fixed-footer'><div class='modal-content'><h4>Modal Header</h4><p>A bunch of text</p></div><div class='modal-footer'><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Agree</a></div></div>
 
 
+/* <div id="modal1" class="modal">
+<div class="modal-content">
+    <div class="row">
+        <form class="col s12" id="application">
+            <div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="first_name">Artist Name</label>
+                        <input id="first_name" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="last_name">Genre</label>
+                        <input id="last_name" type="text" class="validate">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="phone-number">Location</label>
+                        <input id="phone-number" type="text" class="validate">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Vocals</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Guitar</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Bass</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Drums</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Keys</span>
+                        </label>
+                    </p>
+                    <p class="col s6">
+                        <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Brass</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div> */
 
 
 

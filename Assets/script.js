@@ -83,7 +83,7 @@ const map = new mapboxgl.Map({
         reverseGeocode: true
         })
 );
-
+// calling modal methods since current Materialize version these are deprecated
 (function($){
     $.fn.leanModal = function(options) {
       if( $('.modal').length > 0 ){
@@ -101,15 +101,17 @@ const map = new mapboxgl.Map({
     };
   })(jQuery);
 
+// Instantializing modal trigger
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });
-
+// Instantializing form selection triggers
   $(document).ready(function(){
     $('select').formSelect();
   });
-
-  $(document).ready(function(){
-    $('.timepicker').timepicker();
+// Instantializing carousel
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
   });
