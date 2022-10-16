@@ -1,5 +1,7 @@
 var timeText = document.getElementById('timeText');
-var submitButton = document.getElementById('submitBtn');
+var smithsSubmitButton = document.getElementById('submitBtn');
+var nickSubmitBtn = document.querySelector("#modal1 > div > div > form > div.modal-footer > a");
+var bbSubmitBtn = document.querySelector("#modal2 > div > div > form > div.modal-footer > a");
 mapboxgl.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -114,7 +116,7 @@ $(document).ready(function(){
 
   // Sending Data to Local Storage with submit btn
 
-function saveData(event) {
+function smithSaveData(event) {
     const form = document.getElementById('application');
     event.preventDefault();
     const artistName = document.getElementById('artistName').value;
@@ -124,11 +126,43 @@ function saveData(event) {
     const Instrument = document.querySelector("#modal3 > div > div > form > div:nth-child(5) > div > input").value;
     const cb = document.querySelector('#accept');
     const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
-    localStorage.setItem('Data' + artistName, JSON.stringify(data));
+    localStorage.setItem('Smith Data' + artistName, JSON.stringify(data));
     alert("saved");
 }
 
-submitButton.addEventListener('click', saveData)
+function nickSaveData(event) {
+  const form = document.getElementById('application');
+  event.preventDefault();
+  const artistName = document.getElementById('nickArtist').value;
+  const genreName = document.getElementById('nickGenre').value;
+  const emailIn = document.getElementById('nickEmail').value;
+  const timeSlots = document.getElementById('nickTime').value;
+  const Instrument = document.querySelector("#modal1 > div > div > form > div:nth-child(5) > div > input").value;
+  const cb = document.querySelector('#accept');
+  const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
+  localStorage.setItem('Nick Data' + artistName, JSON.stringify(data));
+  alert("saved");
+}
+
+function bbSaveData(event) {
+  const form = document.getElementById('application');
+  event.preventDefault();
+  const artistName = document.getElementById('bbArtist').value;
+  const genreName = document.getElementById('bbGenre').value;
+  const emailIn = document.getElementById('bbEmail').value;
+  const timeSlots = document.getElementById('bbTime').value;
+  const Instrument = document.querySelector("#modal2 > div > div > form > div:nth-child(5) > div > input").value;
+  const cb = document.querySelector('#accept');
+  const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
+  localStorage.setItem('BlueBird Data' + artistName, JSON.stringify(data));
+  alert("saved");
+}
+
+smithsSubmitButton.addEventListener('click', smithSaveData)
+nickSubmitBtn.addEventListener("click", nickSaveData)
+bbSubmitBtn.addEventListener("click", bbSaveData)
+
+
   $(document).ready(function(){
     $('.timepicker').timepicker();
   });
