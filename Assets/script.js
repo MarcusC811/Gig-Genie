@@ -117,16 +117,15 @@ $(document).ready(function(){
 function saveData(event) {
     const form = document.getElementById('application');
     event.preventDefault();
-    var artistName = document.getElementById('artist_name').value;
-    var genreName = document.getElementById('genre').value;
-    var emailIn = document.getElementById('email').value;
-    // var locationIn = document.getElementById('location').value;
+    const artistName = document.getElementById('artistName').value;
+    const genreName = document.getElementById('genreIn').value;
+    const emailIn = document.getElementById('emailIn').value;
+    const timeSlots = document.getElementById('timeSlots').value;
+    const Instrument = document.querySelector("#modal3 > div > div > form > div:nth-child(5) > div > input").value;
     const cb = document.querySelector('#accept');
-    console.log(cb !== null);
-    var data = {Name: artistName, Time: genreName, Email: emailIn};
+    const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
     localStorage.setItem('Data' + artistName, JSON.stringify(data));
     alert("saved");
-    form.reset();
 }
 
 submitButton.addEventListener('click', saveData)
