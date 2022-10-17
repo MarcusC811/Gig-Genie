@@ -19,12 +19,13 @@
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">Gig Genie</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Birmingham</a></li>
-            <li><a href="badges.html">Nashville</a></li>
-            <li><a href="collapsible.html">Atlanta</a></li>
+            <li><a href="#nick-c">Birmingham</a></li>
+            <li><a href="#bluebird-c">Nashville</a></li>
+            <li><a href="#smith-c">Atlanta</a></li>
           </ul>
         </div>
       </nav>
+
 
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
@@ -33,9 +34,9 @@
         <div id='map' class="dark"></div>
     </div>
 
-<!-- class="input-field col s6" -->
+
 <!-- Modal1 (The Nick) Structure -->
-    <div id="modal1" class="modal">
+    <div id="TheNick" class="modal">
         <div class="modal-content">
             <h4>The Nick Open Mic Sign Up</h4>
 
@@ -96,7 +97,7 @@
 
     <!--Modal2 (The Bluebird Cafe) Structure-->
 
-    <div id="modal2" class="modal">
+    <div id="Bluebird" class="modal">
         <div class="modal-content">
             <h4>The Bluebird Cafe Open Mic Sign Up</h4>
 
@@ -152,7 +153,7 @@
 
     <!--Modal3 (Smith's Olde Bar) Structure-->
 
-    <div id="modal3" class="modal">
+    <div id="Smiths" class="modal">
         <div class="modal-content">
             <h4>Smith's Olde Bar Open Mic Sign Up</h4>
 
@@ -215,22 +216,29 @@
 <!--Carousel-->
     <div id="carousel" class="container">
         <div class="carousel carousel-slider center">
-            <div class="carousel-fixed-item center">
-              <a class="btn waves-effect white-text darken-text-2">Sign Up</a>
+            <div class="carousel-item red lighten-2 white-text" id="bluebird-c">
+                <h2>The Bluebird Cafe</h2>
+                <img src="./Assets/Images/Bluebird.jpg" class="center-align">
+                <h5 id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982. The club features acoustic music performed by both established singer-songwriters, and cover artists.</h5>
+                <div class="carousel-fixed-item center">
+                    <a class='waves-effect waves-light btn modal-trigger' href='#Bluebird'>Sign Up</a>
+                </div>
             </div>
-            <div class="carousel-item black-text" href="#one!">
-              <h2>The Bluebird Cafe</h2>
-              <img src="./Assets/Images/Bluebird.jpg" class="center-align">
-              <h6 id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982. The club features acoustic music performed by both established singer-songwriters, and cover artists.</h6>
+            <div class="carousel-item red lighten-2 white-text" id="nick-c">
+                <h2>The Nick</h2>
+                <img src="./Assets/Images/TheNick.jpg" class="center-align">
+                <h5 id="carousel-text" class="white-text  carousel-fixed-item">The Nick is a bar and live music venue at 2514 10th Avenue South in Southside. The self-proclaimed "dirty little secret" hosts local and national rock acts.</h5>
+                <div class="carousel-fixed-item center">
+                    <a class='waves-effect waves-light btn modal-trigger' href='#TheNick'>Sign Up</a>
+                </div>
             </div>
-            <div class="carousel-item black-text" href="#two!">
-              <h2>The Nick</h2>
-              <img src="./Assets/Images/TheNick2.jpg">
-              <h6 id="nick-carousel-text" class="white-text carousel-fixed-item">The Nick is a bar and live music venue at 2514 10th Avenue South in Southside. The self-proclaimed "dirty little secret" hosts local and national rock acts.</h6>
-            </div>
-            <div class="carousel-item green white-text" href="#three!">
-              <h2>Third Panel</h2>
-              <p class="white-text">This is your third panel</p>
+            <div class="carousel-item red lighten-2 white-text" id="smith-c">
+                <h2>Smith's Olde Bar</h2>
+                <img src="./Assets/Images/Smiths.jpg">
+                <h5 id="carousel-text" class="white-text carousel-fixed-item">Founded by Dan Nolen and Mike Reeves, Smith`s Olde Bar opened its doors in 1994 and has continued to be one of Atlanta`s most historic music venues, having hosted some of the most prominent names in music today including David Bowie, Train, Tom Morello of Rage Against The Machine, Bush, and  Band of Horses.</h5>
+                <div class="carousel-fixed-item center">
+                    <a class='waves-effect waves-light btn modal-trigger' href='#Smiths'>Sign Up</a>
+                </div>
             </div>
           </div>
     </div>
@@ -255,6 +263,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+    <script src="./Assets/config.js"></script>
     <script src="./Assets/script.js"></script>
 </body>
 </html>
