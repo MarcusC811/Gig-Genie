@@ -1,17 +1,23 @@
+
 body { 
     margin:0;
     padding:0;
 }
 
+
+.modal {
+    max-height: 80%;
+}
+
 #map {
     position:absolute;
-    margin-top: 10px;
+    margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 0%;
     margin-right: 10%;
     /* margin: 3%; */
     width: 70%;
-    height: 25%;
+    height: 60%;
 }
 
 #application{
@@ -24,25 +30,8 @@ body {
     max-width: 100%;
 }
 
-.info-cards {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding: 50px 5px;
-    margin-top: 250px;
+.carousel{
+    padding: 30px 300px 30px 300px;
+    position: relative;
+    top: 500px;
 }
-
-.activator {
-    height: 150px;
-    overflow: hidden;
-    max-width: 80%%;
-}
-
-.card-content {
-    height: 10px;
-    nav-down: 100%;
-}
-
-.info-wrapper{
-        max-height: 600px
-}
-

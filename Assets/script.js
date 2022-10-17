@@ -113,3 +113,16 @@ $(document).ready(function(){
   $(document).ready(function(){
     $('.timepicker').timepicker();
   });
+
+  //Gigs 
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+         
+ //modal
+
+
+
+
+  
