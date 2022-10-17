@@ -25,11 +25,14 @@ body {
 }
 
 #carousel-text {
-    margin-bottom: 42%;
+    border-style:solid;
+    margin: 10%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.578);
 }
 
-#nick-carousel-text {
-    margin-bottom: 70%;
+#carousel-img {
+    opacity: 70%;
 }
 
 #application{
@@ -40,4 +43,8 @@ body {
 
 .leaflet-popup-content img {
     max-width: 100%;
+}
+
+#nick-c {
+    opacity: 70%;
 }
