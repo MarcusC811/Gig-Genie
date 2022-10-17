@@ -186,3 +186,33 @@ $(document).ready(function(){
   $(document).ready(function(){
     $('.parallax').parallax();
   });
+
+
+
+// Open Data Melbourne
+$.ajax({
+    url: "https://data.melbourne.vic.gov.au/resource/mgqj-necz.json",
+    type: "GET",
+    data: {
+      "$limit" : 3,
+      "$$app_token" : ""
+    }
+}).done(function(data) {
+  alert("Retrieved " + data.length + " records from the dataset!");
+  console.log(data);
+
+  const marker4 = new mapboxgl.Marker()
+  .setLngLat([data[0].lon, data[0].lat])
+  .setPopup(new mapboxgl.Popup().setHTML("<h6>data[0].venue_name</h6><ul><li>data[0].vanue_address</li>"))
+  .addTo(map); 
+
+  const marker5 = new mapboxgl.Marker()
+    .setLngLat([-86.8169, 36.1021])
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>data[1].venue_name</h6><ul><li>data[1].vanue_address</li>"))
+    .addTo(map);
+
+  const marker6 = new mapboxgl.Marker()
+    .setLngLat([-84.3688, 33.7976])
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>data[2].venue_name</h6><ul><li>data[2].vanue_address</li>"))
+    .addTo(map);
+});
