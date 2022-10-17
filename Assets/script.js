@@ -146,6 +146,11 @@ const map = new mapboxgl.Map({
         })
 );
 
+// Resize the map when the map container is shown
+// after being initially hidden with CSS.
+const mapDiv = document.getElementById('map');
+if (mapDiv.style.visibility === true) map.resize();
+
 
 // MATERIALIZE
 
@@ -183,13 +188,13 @@ $(document).ready(function(){
   });
 
   //Playing around with parallax - may remove later
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
+  // $(document).ready(function(){
+  //   $('.parallax').parallax();
+  // });
 
 
 
-// Open Data Melbourne
+// Open Data Melbourne function
 $.ajax({
     url: "https://data.melbourne.vic.gov.au/resource/mgqj-necz.json",
     type: "GET",
@@ -198,21 +203,29 @@ $.ajax({
       "$$app_token" : ""
     }
 }).done(function(data) {
-  alert("Retrieved " + data.length + " records from the dataset!");
+  //alert("Retrieved " + data.length + " records from the dataset!");
   console.log(data);
+
+  var vn1 = data[0].venue_name
+  var va1 = data[0].venue_address
+  var vn2 = data[1].venue_name
+  var va2 = data[1].venue_address
+  var vn3 = data[2].venue_name
+  var va3 = data[2].venue_address
   
   const marker4 = new mapboxgl.Marker()
   .setLngLat([data[0].lon, data[0].lat])
-  .setPopup(new mapboxgl.Popup().setHTML("<h6>data[0].venue_name</h6><ul><li>data[0].vanue_address</li>"))
+  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn1 + ' Address: ' + va1))
   .addTo(map); 
 
   const marker5 = new mapboxgl.Marker()
   .setLngLat([data[1].lon, data[1].lat])
-  .setPopup(new mapboxgl.Popup().setHTML("<h6>data[1].venue_name</h6><ul><li>data[1].vanue_address</li>"))
+  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn2 + ' Address: ' + va2))
   .addTo(map);
 
   const marker6 = new mapboxgl.Marker()
   .setLngLat([data[2].lon, data[2].lat])
-  .setPopup(new mapboxgl.Popup().setHTML("<h6>data[2].venue_name</h6><ul><li>data[2].vanue_address</li>"))
+  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn3 + ' Address: ' + va3))
   .addTo(map);
+
 });

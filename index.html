@@ -13,257 +13,266 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 
 </head>
-<body>
-    <!-- Nav Bar -->
+
+<!-- Nav Bar -->
+<header>
     <nav>
         <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo">Gig Genie</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="index.html" class="brand-logo">Gig Genie</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#nick-c">Birmingham</a></li>
             <li><a href="#bluebird-c">Nashville</a></li>
             <li><a href="#smith-c">Atlanta</a></li>
-          </ul>
+        </ul>
         </div>
-      </nav>
+    </nav>
+</header>
+<main>
+    <body>
 
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-
-    <div class="container">
-        <div id='map' class="dark"></div>
-    </div>
-
-
-<!-- Modal1 (The Nick) Structure -->
-    <div id="TheNick" class="modal">
-        <div class="modal-content">
-            <h4>The Nick Open Mic Sign Up</h4>
-
-            <div class="row">
-                <form class="col s12">
-                    <div class="row modal-form-row">
-                        <div class="input-field col s12">
-                            <input id="artist_name" type="text" class="validate">
-                            <label for="artist_name">Artist Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="genre" type="text" class="validate">
-                            <label for="genre">Genre</label>
-                        </div>
-                    </div>       
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="text" class="validate"></textarea>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s12">
-                        <select>
-                          <optgroup label="Monday">
-                            <option value="1">Mon 7pm-8pm</option>
-                            <option value="2">Mon 8pm-9pm</option>
-                            <option value="3">Mon 9pm-10pm</option>
-                            <option value="4">Mon 10pm-11pm</option>
-                          </optgroup>
-                          <optgroup label="Thursday">
-                            <option value="5">Thurs 7pm-8pm</option>
-                            <option value="6">Thurs 8pm-9pm</option>
-                            <option value="7">Thurs 9pm-10pm</option>
-                            <option value="8">Thurs 10pm-11pm</option>
-                          </optgroup>
-                        </select>
-                        <label>Timeslots</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select multiple>
-                          <option value="9">Vocals</option>
-                          <option value="10">Guitar</option>
-                          <option value="11">Bass</option>
-                          <option value="12">Drums</option>
-                        </select>
-                        <label>Instrument(s)</label>
-                    </div>
-                        
-                    <div class="modal-footer">
-                        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-                    </div>
-                </form>
+        <div class="row">
+            <div class="container">
+                <div id='map'></div>
             </div>
         </div>
-    </div>
 
-    <!--Modal2 (The Bluebird Cafe) Structure-->
 
-    <div id="Bluebird" class="modal">
-        <div class="modal-content">
-            <h4>The Bluebird Cafe Open Mic Sign Up</h4>
+    <!-- Modal1 (The Nick) Structure -->
+        <div id="TheNick" class="modal">
+            <div class="modal-content">
+                <h4>The Nick Open Mic Sign Up</h4>
 
-            <div class="row">
-                <form class="col s12">
-                    <div class="row modal-form-row">
-                        <div class="input-field col s12">
-                            <input id="artist_name" type="text" class="validate">
-                            <label for="artist_name">Artist Name</label>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row modal-form-row">
+                            <div class="input-field col s12">
+                                <input id="artist_name" type="text" class="validate">
+                                <label for="artist_name">Artist Name</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="genre" type="text" class="validate">
-                            <label for="genre">Genre</label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="genre" type="text" class="validate">
+                                <label for="genre">Genre</label>
+                            </div>
+                        </div>       
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="text" class="validate"></textarea>
+                                <label for="email">Email</label>
+                            </div>
                         </div>
-                    </div>       
-                    <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="text" class="validate"></textarea>
-                            <label for="email">Email</label>
+                            <select>
+                            <optgroup label="Monday">
+                                <option value="1">Mon 7pm-8pm</option>
+                                <option value="2">Mon 8pm-9pm</option>
+                                <option value="3">Mon 9pm-10pm</option>
+                                <option value="4">Mon 10pm-11pm</option>
+                            </optgroup>
+                            <optgroup label="Thursday">
+                                <option value="5">Thurs 7pm-8pm</option>
+                                <option value="6">Thurs 8pm-9pm</option>
+                                <option value="7">Thurs 9pm-10pm</option>
+                                <option value="8">Thurs 10pm-11pm</option>
+                            </optgroup>
+                            </select>
+                            <label>Timeslots</label>
                         </div>
-                    </div>
-                    <div class="input-field col s12">
-                        <select>
-                          <optgroup label="Monday">
-                            <option value="1">Mon 6pm-7pm</option>
-                            <option value="2">Mon 7pm-8pm</option>
-                            <option value="3">Mon 8pm-9pm</option>
-                            <option value="4">Mon 9pm-10pm</option>
-                            <option value="5">Mon 10pm-11pm</option>
-                          </optgroup>
-                        </select>
-                        <label>Timeslots</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select multiple>
-                          <option value="6">Vocals</option>
-                          <option value="7">Guitar</option>
-                          <option value="8">Bass</option>
-                          <option value="9">Drums</option>
-                        </select>
-                        <label>Instrument(s)</label>
-                    </div>
-                        
-                    <div class="modal-footer">
-                        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!--Modal3 (Smith's Olde Bar) Structure-->
-
-    <div id="Smiths" class="modal">
-        <div class="modal-content">
-            <h4>Smith's Olde Bar Open Mic Sign Up</h4>
-
-            <div class="row">
-                <form class="col s12">
-                    <div class="row modal-form-row">
                         <div class="input-field col s12">
-                            <input id="artist_name" type="text" class="validate">
-                            <label for="artist_name">Artist Name</label>
+                            <select multiple>
+                            <option value="9">Vocals</option>
+                            <option value="10">Guitar</option>
+                            <option value="11">Bass</option>
+                            <option value="12">Drums</option>
+                            </select>
+                            <label>Instrument(s)</label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="genre" type="text" class="validate">
-                            <label for="genre">Genre</label>
+                            
+                        <div class="modal-footer">
+                            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
                         </div>
-                    </div>       
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="text" class="validate"></textarea>
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s12">
-                        <select>
-                          <optgroup label="Monday">
-                            <option value="1">Mon 7pm-8pm</option>
-                            <option value="2">Mon 8pm-9pm</option>
-                            <option value="3">Mon 9pm-10pm</option>
-                            <option value="4">Mon 10pm-11pm</option>
-                            <option value="4">Mon 11pm-12am</option>
-                          </optgroup>
-                          <optgroup label="Wednesday">
-                            <option value="5">Wed 7pm-8pm</option>
-                            <option value="6">Wed 8pm-9pm</option>
-                            <option value="7">Wed 9pm-10pm</option>
-                            <option value="8">Wed 10pm-11pm</option>
-                            <option value="9">Wed 11pm-12am</option>
-                          </optgroup>
-                        </select>
-                        <label>Timeslots</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select multiple>
-                          <option value="10">Vocals</option>
-                          <option value="11">Guitar</option>
-                          <option value="12">Bass</option>
-                          <option value="13">Drums</option>
-                        </select>
-                        <label>Instrument(s)</label>
-                    </div>
-                        
-                    <div class="modal-footer">
-                        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-<!--Carousel-->
-    <div id="carousel" class="container">
-        <div class="carousel carousel-slider center">
-            <div class="carousel-item black-text" id="bluebird-c">
-                <h2>The Bluebird Cafe</h2>
-                <img src="./Assets/Images/Bluebird.jpg" class="center-align" id="carousel-img">
-                <h5 id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982. The club features acoustic music performed by both established singer-songwriters, and cover artists.</h5>
-                <div class="carousel-fixed-item center">
-                    <a class='waves-effect waves-light btn modal-trigger' href='#Bluebird'>Sign Up</a>
+                    </form>
                 </div>
             </div>
-            <div class="carousel-item black-text" id="nick-c">
-                <h2>The Nick</h2>
-                <img src="./Assets/Images/TheNick.jpg" class="center-align" id="carousel-img">
-                <h5 id="carousel-text" class="white-text  carousel-fixed-item">The Nick is a bar and live music venue at 2514 10th Avenue South in Southside. The self-proclaimed "dirty little secret" hosts local and national rock acts.</h5>
-                <div class="carousel-fixed-item center">
-                    <a class='waves-effect waves-light btn modal-trigger' href='#TheNick'>Sign Up</a>
-                </div>
-            </div>
-            <div class="carousel-item black-text" id="smith-c">
-                <h2>Smith's Olde Bar</h2>
-                <img src="./Assets/Images/Smiths.jpg" id="carousel-img">
-                <h5 id="carousel-text" class="white-text carousel-fixed-item">Founded by Dan Nolen and Mike Reeves, Smith`s Olde Bar opened its doors in 1994 and has continued to be one of Atlanta`s most historic music venues, having hosted some of the most prominent names in music today including David Bowie, Train, Tom Morello of Rage Against The Machine, Bush, and  Band of Horses.</h5>
-                <div class="carousel-fixed-item center">
-                    <a class='waves-effect waves-light btn modal-trigger' href='#Smiths'>Sign Up</a>
-                </div>
-            </div>
-          </div>
-    </div>
+        </div>
 
+        <!--Modal2 (The Bluebird Cafe) Structure-->
+
+        <div id="Bluebird" class="modal">
+            <div class="modal-content">
+                <h4>The Bluebird Cafe Open Mic Sign Up</h4>
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row modal-form-row">
+                            <div class="input-field col s12">
+                                <input id="artist_name" type="text" class="validate">
+                                <label for="artist_name">Artist Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="genre" type="text" class="validate">
+                                <label for="genre">Genre</label>
+                            </div>
+                        </div>       
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="text" class="validate"></textarea>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                            <optgroup label="Monday">
+                                <option value="1">Mon 6pm-7pm</option>
+                                <option value="2">Mon 7pm-8pm</option>
+                                <option value="3">Mon 8pm-9pm</option>
+                                <option value="4">Mon 9pm-10pm</option>
+                                <option value="5">Mon 10pm-11pm</option>
+                            </optgroup>
+                            </select>
+                            <label>Timeslots</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select multiple>
+                            <option value="6">Vocals</option>
+                            <option value="7">Guitar</option>
+                            <option value="8">Bass</option>
+                            <option value="9">Drums</option>
+                            </select>
+                            <label>Instrument(s)</label>
+                        </div>
+                            
+                        <div class="modal-footer">
+                            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal3 (Smith's Olde Bar) Structure-->
+
+        <div id="Smiths" class="modal">
+            <div class="modal-content">
+                <h4>Smith's Olde Bar Open Mic Sign Up</h4>
+
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row modal-form-row">
+                            <div class="input-field col s12">
+                                <input id="artist_name" type="text" class="validate">
+                                <label for="artist_name">Artist Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="genre" type="text" class="validate">
+                                <label for="genre">Genre</label>
+                            </div>
+                        </div>       
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="text" class="validate"></textarea>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                            <optgroup label="Monday">
+                                <option value="1">Mon 7pm-8pm</option>
+                                <option value="2">Mon 8pm-9pm</option>
+                                <option value="3">Mon 9pm-10pm</option>
+                                <option value="4">Mon 10pm-11pm</option>
+                                <option value="4">Mon 11pm-12am</option>
+                            </optgroup>
+                            <optgroup label="Wednesday">
+                                <option value="5">Wed 7pm-8pm</option>
+                                <option value="6">Wed 8pm-9pm</option>
+                                <option value="7">Wed 9pm-10pm</option>
+                                <option value="8">Wed 10pm-11pm</option>
+                                <option value="9">Wed 11pm-12am</option>
+                            </optgroup>
+                            </select>
+                            <label>Timeslots</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select multiple>
+                            <option value="10">Vocals</option>
+                            <option value="11">Guitar</option>
+                            <option value="12">Bass</option>
+                            <option value="13">Drums</option>
+                            </select>
+                            <label>Instrument(s)</label>
+                        </div>
+                            
+                        <div class="modal-footer">
+                            <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Carousel-->
+        <div class="row" id="carousel">
+            <div class="container hide-on-med-and-down">
+                <div class="carousel carousel-slider center">
+                    <div class="carousel-item black-text" id="bluebird-c">
+                        <h2 class="hide-on-med-and-down">The Bluebird Cafe</h2>
+                        <img src="./Assets/Images/Bluebird.jpg" class="responsive-img center-align" id="carousel-img">
+                        <h5 id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982. The club features acoustic music performed by both established singer-songwriters, and cover artists.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#Bluebird'>Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item black-text" id="nick-c">
+                        <h2 class="hide-on-med-and-down">The Nick</h2>
+                        <img src="./Assets/Images/TheNick.jpg" class="responsive-img center-align" id="carousel-img">
+                        <h5 id="carousel-text" class="white-text  carousel-fixed-item">The Nick is a bar and live music venue at 2514 10th Avenue South in Southside. The self-proclaimed "dirty little secret" hosts local and national rock acts.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#TheNick'>Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item black-text" id="smith-c">
+                        <h2 class="hide-on-med-and-down">Smith's Olde Bar</h2>
+                        <img src="./Assets/Images/Smiths.jpg" class="responsive-img center-align"id="carousel-img">
+                        <h5 id="carousel-text" class="white-text carousel-fixed-item">Founded by Dan Nolen and Mike Reeves, Smith`s Olde Bar opened its doors in 1994 and has continued to be one of Atlanta`s most historic music venues, having hosted some of the most prominent names in music today including David Bowie, Train, Tom Morello of Rage Against The Machine, Bush, and  Band of Horses.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#Smiths'>Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+        <script src="./Assets/config.js"></script>
+        <script src="./Assets/script.js"></script>
+    </body>
+</main>
 <!-- Footer -->
-<footer class="page-footer">
+<footer class="page-footer hide-on-med-and-down">
     <div class="container">
-      <div class="row">
-          <h5 class="white-text center">Gig Genie - where the magic happens!</h5>
+    <div class="row">
+        <h5 class="white-text center">Gig Genie - where the magic happens!</h5>
         </div>
-         <div class="col l4 offset-l2 s12"> 
+        <div class="col l4 offset-l2 s12"> 
         </div>
-      </div>
+    </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      © 2022 Gig Genie
-      <a class="grey-text text-lighten-4 right" href="#!">Contact Us</a>
-      </div>
+    <div class="container">
+    © 2022 Gig Genie
+    <a class="grey-text text-lighten-4 right" href="#!">Contact Us</a>
     </div>
-  </footer> 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-    <script src="./Assets/config.js"></script>
-    <script src="./Assets/script.js"></script>
-</body>
+    </div>
+</footer> 
 </html>

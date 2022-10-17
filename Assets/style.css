@@ -16,11 +16,11 @@ body {
     margin-right: 10%;
     /* margin: 3%; */
     width: 70%;
-    height: 60%;
+    height: 50%;
 }
 
 #carousel {
-    margin-top: 70%;
+    margin-top: 60%;
     margin-bottom: 2%;
 }
 
@@ -41,10 +41,10 @@ body {
     width: 100%;
 }
 
-.leaflet-popup-content img {
-    max-width: 100%;
-}
-
 #nick-c {
     opacity: 70%;
 }
+
+/* #parallax-img {
+    
+} */
