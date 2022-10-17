@@ -130,8 +130,8 @@ const map = new mapboxgl.Map({
             geocodes.push(coordinateFeature(coord1, coord2));
             geocodes.push(coordinateFeature(coord2, coord1));
             }
-            
             return geocodes;
+            
         };
  
 // Add the search control to the map
