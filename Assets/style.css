@@ -1,0 +1,46 @@
+body { 
+    margin:0;
+    padding:0;
+}
+
+
+.modal {
+    max-height: 80%;
+}
+
+#logo {
+    height: auto;
+    width: 13%;
+    
+}
+
+#map {
+    position:absolute;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 0%;
+    margin-right: 10%;
+    /* margin: 3%; */
+    width: 70%;
+    height: 50%;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    text-align: center;
+}
+
+#carousel {
+    margin-top: 60%;
+    margin-bottom: 2%;
+}
+
+#carousel-text {
+    border-style:solid;
+    margin: 10%;
+    text-align:center;
+    background-color: rgba(0, 0, 0, 0.578);
+}
+
+#carousel-img {
+    opacity: 70%;
+}
