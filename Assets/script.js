@@ -1,7 +1,46 @@
+// MATERIALIZE
+
+// calling modal methods
+(function($){
+  $.fn.leanModal = function(options) {
+    if( $('.modal').length > 0 ){
+        $('.modal').modal(options);
+    }
+  };
+
+  $.fn.openModal = function(options) {
+    $(this).modal(options);
+    $(this).modal('open');
+  };
+
+  $.fn.closeModal = function() {
+    $(this).modal('close');
+  };
+})(jQuery);
+
+// Instantializing modal trigger
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal();
+});
+// Instantializing form selection triggers
+$(document).ready(function(){
+  $('select').formSelect();
+});
+// Instantializing carousel
+$('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: true
+});
+
+
+
+
+// Local storage logic start
 var timeText = document.getElementById('timeText');
-var smithsSubmitButton = document.querySelector("#Smiths > div > div > form > div.modal-footer > a");
-var nickSubmitBtn = document.querySelector("#TheNick > div > div > form > div.modal-footer > a");
-var bbSubmitBtn = document.querySelector("#Bluebird > div > div > form > div.modal-footer > a");
+var smithsSubmitButton = document.querySelector("#modal3 > div > div > form > div.modal-footer > a");
+var nickSubmitBtn = document.querySelector("#modal1 > div > div > form > div.modal-footer > a");
+var bbSubmitBtn = document.querySelector("#modal2 > div > div > form > div.modal-footer > a");
 
 
   // Sending Data to Local Storage with submit btn
@@ -13,11 +52,10 @@ var bbSubmitBtn = document.querySelector("#Bluebird > div > div > form > div.mod
     const genreName = document.getElementById('genreIn').value;
     const emailIn = document.getElementById('emailIn').value;
     const timeSlots = document.getElementById('timeSlots').value;
-    const Instrument = document.querySelector("#Smiths > div > div > form > div:nth-child(5) > div > input").value;
+    const Instrument = document.querySelector("#modal3 > div > div > form > div:nth-child(5) > div > input").value;
     const cb = document.querySelector('#accept');
     const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
-    localStorage.setItem('Smith Data' + artistName, JSON.stringify(data));
-    alert("saved");
+    localStorage.setItem("Smith's | " + artistName, JSON.stringify(data));
 }
 
 function nickSaveData(event) {
@@ -27,11 +65,10 @@ function nickSaveData(event) {
   const genreName = document.getElementById('nickGenre').value;
   const emailIn = document.getElementById('nickEmail').value;
   const timeSlots = document.getElementById('nickTime').value;
-  const Instrument = document.querySelector("#TheNick > div > div > form > div:nth-child(5) > div > input").value;
+  const Instrument = document.querySelector("#modal1 > div > div > form > div:nth-child(5) > div > input").value;
   const cb = document.querySelector('#accept');
   const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
-  localStorage.setItem('Nick Data' + artistName, JSON.stringify(data));
-  alert("saved");
+  localStorage.setItem('The Nick | ' + artistName, JSON.stringify(data));
 }
 
 function bbSaveData(event) {
@@ -41,11 +78,10 @@ function bbSaveData(event) {
   const genreName = document.getElementById('bbGenre').value;
   const emailIn = document.getElementById('bbEmail').value;
   const timeSlots = document.getElementById('bbTime').value;
-  const Instrument = document.querySelector("#Bluebird > div > div > form > div:nth-child(5) > div > input").value;
+  const Instrument = document.querySelector("#modal2 > div > div > form > div:nth-child(5) > div > input").value;
   const cb = document.querySelector('#accept');
   const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
-  localStorage.setItem('BlueBird Data' + artistName, JSON.stringify(data));
-  alert("saved");
+  localStorage.setItem('The BlueBird | ' + artistName, JSON.stringify(data));
 }
 
 smithsSubmitButton.addEventListener('click', smithSaveData)
@@ -70,20 +106,20 @@ const map = new mapboxgl.Map({
 
     const marker1 = new mapboxgl.Marker()
     .setLngLat([-86.7905, 33.5054])
-    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Nick</h6><ul><li>2514 10th Ave S, Birmingham, AL 35205</li><li>Open Mics: <ul><li>Monday 7pm-11pm</li><li>Thursday 7pm-11pm</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#TheNick'>Sign Up</a>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Nick</h6><ul><li>2514 10th Ave S, Birmingham, AL 35205</li><li>Open Mics: <ul><li>Monday 7pm-11pm</li><li>Thursday 7pm-11pm</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal1'>Sign Up</a>"))
     .addTo(map); 
 
     const marker2 = new mapboxgl.Marker()
     .setLngLat([-86.8169, 36.1021])
-    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Bluebird Cafe</h6><ul><li>4104 Hillsboro Pike, Nashville, TN 37215</li><li>Open Mics: <ul><li>Monday 6pm-10pm</li></ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#Bluebird'>Sign Up</a>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>The Bluebird Cafe</h6><ul><li>4104 Hillsboro Pike, Nashville, TN 37215</li><li>Open Mics: <ul><li>Monday 6pm-10pm</li></ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal2'>Sign Up</a>"))
     .addTo(map);
 
     const marker3 = new mapboxgl.Marker()
     .setLngLat([-84.3688, 33.7976])
-    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#Smiths'>Sign Up</a>"))
+    .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal3'>Sign Up</a>"))
     .addTo(map);
  
-// Referenced from Mapbox Docs
+// Below Referenced from Mapbox Docs Examples section
 /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
 * as search results in carmen geojson format,
@@ -152,80 +188,25 @@ const mapDiv = document.getElementById('map');
 if (mapDiv.style.visibility === true) map.resize();
 
 
-// MATERIALIZE
-
-// calling modal methods
-(function($){
-    $.fn.leanModal = function(options) {
-      if( $('.modal').length > 0 ){
-          $('.modal').modal(options);
-      }
-    };
-  
-    $.fn.openModal = function(options) {
-      $(this).modal(options);
-      $(this).modal('open');
-    };
-  
-    $.fn.closeModal = function() {
-      $(this).modal('close');
-    };
-  })(jQuery);
-
-// Instantializing modal trigger
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
-// Instantializing form selection triggers
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-// Instantializing carousel
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-  });
-
-  //Playing around with parallax - may remove later
-  // $(document).ready(function(){
-  //   $('.parallax').parallax();
-  // });
-
-
-
-// Open Data Melbourne function
+var limit = 3
+// referenced from Open Data Melbourne, fit to our needs
 $.ajax({
     url: "https://data.melbourne.vic.gov.au/resource/mgqj-necz.json",
     type: "GET",
     data: {
-      "$limit" : 3,
+      "$limit" : limit, // results limit
       "$$app_token" : ""
     }
 }).done(function(data) {
-  //alert("Retrieved " + data.length + " records from the dataset!");
-  console.log(data);
+  //for loop that creates  amount of markers based on API results limit
+  for (i=0; i<limit; i++) {
+    var vn = data[i].venue_name
+    var va = data[i].venue_address
 
-  var vn1 = data[0].venue_name
-  var va1 = data[0].venue_address
-  var vn2 = data[1].venue_name
-  var va2 = data[1].venue_address
-  var vn3 = data[2].venue_name
-  var va3 = data[2].venue_address
-  
-  const marker4 = new mapboxgl.Marker()
-  .setLngLat([data[0].lon, data[0].lat])
-  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn1 + ' Address: ' + va1))
-  .addTo(map); 
+    new mapboxgl.Marker()
+      .setLngLat([data[i].lon, data[i].lat])
+      .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn + ' |' + ' Address: ' + va))
+      .addTo(map);
+  }
 
-  const marker5 = new mapboxgl.Marker()
-  .setLngLat([data[1].lon, data[1].lat])
-  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn2 + ' Address: ' + va2))
-  .addTo(map);
-
-  const marker6 = new mapboxgl.Marker()
-  .setLngLat([data[2].lon, data[2].lat])
-  .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn3 + ' Address: ' + va3))
-  .addTo(map);
-
-});
+ });
