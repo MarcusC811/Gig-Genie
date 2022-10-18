@@ -16,7 +16,9 @@ This project is <b>phase one</b> of a minimum viable product that allows users t
 - City of Melbourne Open Data
 
 ## Future Development
-
+- 
+- 
+- 
 
 ## Project Members
 Brennon Lent <br>
@@ -39,5 +41,3 @@ SO THAT I can expose people to my music <br>
 
 ## Webiste
 https://marcusc811.github.io/Gig-Genie/
-
-

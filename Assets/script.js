@@ -1,4 +1,3 @@
-
 // MATERIALIZE
 
 // calling modal methods
@@ -97,7 +96,6 @@ bbSubmitBtn.addEventListener("click", bbSaveData)
 
 // MAPBOX
 mapboxgl.accessToken = config.MapboxKey
-
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -168,13 +166,11 @@ const map = new mapboxgl.Map({
             geocodes.push(coordinateFeature(coord1, coord2));
             geocodes.push(coordinateFeature(coord2, coord1));
             }
-
             return geocodes;
             
         };
  
 // Add the search control to the map
-
         map.addControl(
         new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -185,7 +181,6 @@ const map = new mapboxgl.Map({
         reverseGeocode: true
         })
 );
-
 
 // Resize the map when the map container is shown
 // after being initially hidden with CSS.
@@ -215,4 +210,3 @@ $.ajax({
   }
 
  });
-
