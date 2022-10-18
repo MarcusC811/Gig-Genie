@@ -1,4 +1,101 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoidGltb3RoeXdhcmRsb3ciLCJhIjoiY2t5dGR3dWwyMWNkbjJ1bzdob3BleG9qOSJ9.RRGAaBwkMg7rbDMY1V5e6A';
+// MATERIALIZE
+
+// calling modal methods
+(function($){
+  $.fn.leanModal = function(options) {
+    if( $('.modal').length > 0 ){
+        $('.modal').modal(options);
+    }
+  };
+
+  $.fn.openModal = function(options) {
+    $(this).modal(options);
+    $(this).modal('open');
+  };
+
+  $.fn.closeModal = function() {
+    $(this).modal('close');
+  };
+})(jQuery);
+
+// Instantializing modal trigger
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal();
+});
+// Instantializing form selection triggers
+$(document).ready(function(){
+  $('select').formSelect();
+});
+// Instantializing carousel
+$('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: true
+});
+
+
+
+
+// Local storage logic start
+var timeText = document.getElementById('timeText');
+var smithsSubmitButton = document.querySelector("#modal3 > div > div > form > div.modal-footer > a");
+var nickSubmitBtn = document.querySelector("#modal1 > div > div > form > div.modal-footer > a");
+var bbSubmitBtn = document.querySelector("#modal2 > div > div > form > div.modal-footer > a");
+
+
+  // Sending Data to Local Storage with submit btn
+
+  function smithSaveData(event) {
+    const form = document.getElementById('application');
+    event.preventDefault();
+    const artistName = document.getElementById('artistName').value;
+    const genreName = document.getElementById('genreIn').value;
+    const emailIn = document.getElementById('emailIn').value;
+    const timeSlots = document.getElementById('timeSlots').value;
+    const Instrument = document.querySelector("#modal3 > div > div > form > div:nth-child(5) > div > input").value;
+    const cb = document.querySelector('#accept');
+    const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
+    localStorage.setItem("Smith's | " + artistName, JSON.stringify(data));
+}
+
+function nickSaveData(event) {
+  const form = document.getElementById('application');
+  event.preventDefault();
+  const artistName = document.getElementById('nickArtist').value;
+  const genreName = document.getElementById('nickGenre').value;
+  const emailIn = document.getElementById('nickEmail').value;
+  const timeSlots = document.getElementById('nickTime').value;
+  const Instrument = document.querySelector("#modal1 > div > div > form > div:nth-child(5) > div > input").value;
+  const cb = document.querySelector('#accept');
+  const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
+  localStorage.setItem('The Nick | ' + artistName, JSON.stringify(data));
+}
+
+function bbSaveData(event) {
+  const form = document.getElementById('application');
+  event.preventDefault();
+  const artistName = document.getElementById('bbArtist').value;
+  const genreName = document.getElementById('bbGenre').value;
+  const emailIn = document.getElementById('bbEmail').value;
+  const timeSlots = document.getElementById('bbTime').value;
+  const Instrument = document.querySelector("#modal2 > div > div > form > div:nth-child(5) > div > input").value;
+  const cb = document.querySelector('#accept');
+  const data = {Name: artistName, Genre: genreName, Time: timeSlots, Email: emailIn, Instrument: Instrument};
+  localStorage.setItem('The BlueBird | ' + artistName, JSON.stringify(data));
+}
+
+smithsSubmitButton.addEventListener('click', smithSaveData)
+nickSubmitBtn.addEventListener("click", nickSaveData)
+bbSubmitBtn.addEventListener("click", bbSaveData)
+
+
+  $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
+
+
+// MAPBOX
+mapboxgl.accessToken = config.MapboxKey
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -22,6 +119,7 @@ const map = new mapboxgl.Map({
     .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal3'>Sign Up</a>"))
     .addTo(map);
  
+// Below Referenced from Mapbox Docs Examples section
 /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
 * as search results in carmen geojson format,
@@ -68,11 +166,11 @@ const map = new mapboxgl.Map({
             geocodes.push(coordinateFeature(coord1, coord2));
             geocodes.push(coordinateFeature(coord2, coord1));
             }
-            
             return geocodes;
+            
         };
  
-// Add the control to the map.
+// Add the search control to the map
         map.addControl(
         new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -84,45 +182,31 @@ const map = new mapboxgl.Map({
         })
 );
 
-(function($){
-    $.fn.leanModal = function(options) {
-      if( $('.modal').length > 0 ){
-          $('.modal').modal(options);
-      }
-    };
-  
-    $.fn.openModal = function(options) {
-      $(this).modal(options);
-      $(this).modal('open');
-    };
-  
-    $.fn.closeModal = function() {
-      $(this).modal('close');
-    };
-  })(jQuery);
-
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-
-  $(document).ready(function(){
-    $('.timepicker').timepicker();
-  });
-
-  //Gigs 
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-  });
-         
- //modal
+// Resize the map when the map container is shown
+// after being initially hidden with CSS.
+const mapDiv = document.getElementById('map');
+if (mapDiv.style.visibility === true) map.resize();
 
 
+var limit = 3
+// referenced from Open Data Melbourne, fit to our needs
+$.ajax({
+    url: "https://data.melbourne.vic.gov.au/resource/mgqj-necz.json",
+    type: "GET",
+    data: {
+      "$limit" : limit, // results limit
+      "$$app_token" : ""
+    }
+}).done(function(data) {
+  //for loop that creates  amount of markers based on API results limit
+  for (i=0; i<limit; i++) {
+    var vn = data[i].venue_name
+    var va = data[i].venue_address
 
+    new mapboxgl.Marker()
+      .setLngLat([data[i].lon, data[i].lat])
+      .setPopup(new mapboxgl.Popup().setText('Venue: ' + vn + ' |' + ' Address: ' + va))
+      .addTo(map);
+  }
 
-  
+ });
