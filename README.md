@@ -12,7 +12,12 @@ SO THAT I can expose people to my music
 ## Webiste Link / Demo
 https://marcusc811.github.io/Gig-Genie/
 
-demo image
+##future devlopment 
+
+..Implementing user accounts and venue / vendor accounts, possibly even creating a social media-esque environment that allows users to “follow” other users/venues and share content 
+..Given more resources and time, the ability to infuse geoJSON data into our Mapbox map from a more robust API that would allow for a greater number of live music venue markers on our map
+..The ability to add Spotify and social media links to the form submissions
+
 
 demo image
 
