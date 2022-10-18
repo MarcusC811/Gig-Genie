@@ -25,12 +25,7 @@ body {
     max-width: 100%;
 }
 
-.white-text{
-    width: 120%;
-    display: flex;
-    justify-content: center;
-    margin-left: 45%;
-}
+
 
 footer {
     position: absolute;
