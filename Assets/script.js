@@ -1,3 +1,4 @@
+
 // MATERIALIZE
 
 // calling modal methods
@@ -96,6 +97,7 @@ bbSubmitBtn.addEventListener("click", bbSaveData)
 
 // MAPBOX
 mapboxgl.accessToken = config.MapboxKey
+
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -106,20 +108,26 @@ const map = new mapboxgl.Map({
 
     const marker1 = new mapboxgl.Marker()
     .setLngLat([-86.7905, 33.5054])
+
     .setPopup(new mapboxgl.Popup().setHTML("<h6>The Nick</h6><ul><li>2514 10th Ave S, Birmingham, AL 35205</li><li>Open Mics: <ul><li>Monday 7pm-11pm</li><li>Thursday 7pm-11pm</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal1'>Sign Up</a>"))
+
     .addTo(map); 
 
     const marker2 = new mapboxgl.Marker()
     .setLngLat([-86.8169, 36.1021])
+
     .setPopup(new mapboxgl.Popup().setHTML("<h6>The Bluebird Cafe</h6><ul><li>4104 Hillsboro Pike, Nashville, TN 37215</li><li>Open Mics: <ul><li>Monday 6pm-10pm</li></ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal2'>Sign Up</a>"))
+
     .addTo(map);
 
     const marker3 = new mapboxgl.Marker()
     .setLngLat([-84.3688, 33.7976])
+
     .setPopup(new mapboxgl.Popup().setHTML("<h6>Smith's Olde Bar</h6><ul><li>1578 Piedmont Ave NE, Atlanta, GA 30324</li><li>Open Mics: <ul><li>Monday 7pm-12am</li><li>Wednesday 7pm-12am</ul></li></ul><!-- Modal Trigger --><a class='waves-effect waves-light btn modal-trigger' href='#modal3'>Sign Up</a>"))
     .addTo(map);
  
 // Below Referenced from Mapbox Docs Examples section
+
 /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
 * as search results in carmen geojson format,
@@ -166,11 +174,13 @@ const map = new mapboxgl.Map({
             geocodes.push(coordinateFeature(coord1, coord2));
             geocodes.push(coordinateFeature(coord2, coord1));
             }
+
             return geocodes;
             
         };
  
 // Add the search control to the map
+
         map.addControl(
         new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -181,6 +191,7 @@ const map = new mapboxgl.Map({
         reverseGeocode: true
         })
 );
+
 
 // Resize the map when the map container is shown
 // after being initially hidden with CSS.
