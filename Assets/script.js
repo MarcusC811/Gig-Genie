@@ -96,6 +96,7 @@ bbSubmitBtn.addEventListener("click", bbSaveData)
 
 // MAPBOX
 mapboxgl.accessToken = config.MapboxKey
+
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -182,6 +183,7 @@ const map = new mapboxgl.Map({
         })
 );
 
+
 // Resize the map when the map container is shown
 // after being initially hidden with CSS.
 const mapDiv = document.getElementById('map');
@@ -210,3 +212,4 @@ $.ajax({
   }
 
  });
+
