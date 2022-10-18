@@ -32,6 +32,10 @@
 <main>
     <body>
 
+
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
         <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
         <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
@@ -107,7 +111,6 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <h4>The Bluebird Cafe Open Mic Sign Up</h4>
-
             <div class="row">
                 <form class="col s12">
                     <div class="row modal-form-row">
@@ -118,6 +121,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
+
                             <input id="bbGenre" type="text" class="validate">
                             <label for="genre">Genre</label>
                         </div>
@@ -127,7 +131,12 @@
                             <input id="bbEmail" type="text" class="validate"></textarea>
                             <label for="email">Email</label>
                         </div>
+
                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
                     <div class="input-field col s12">
                         <select id="bbTime">
                           <optgroup label="Monday">
@@ -159,6 +168,98 @@
     </div>
 
     <!--Modal3 (Smith's Olde Bar) Structure-->
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Smith's Olde Bar Open Mic Sign Up</h4>
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row modal-form-row">
+                        <div class="input-field col s12">
+                            <input id="artistName" type="text" class="validate">
+                            <label for="artist_name">Artist Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="genreIn" type="text" class="validate">
+                            <label for="genre">Genre</label>
+                        </div>
+                    </div>       
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="emailIn" type="text" class="validate"></textarea>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="timeSlots">
+                          <optgroup label="Monday">
+                            <option value="Mon 7pm-8pm">Mon 7pm-8pm</option>
+                            <option value="Mon 8pm-9pm">Mon 8pm-9pm</option>
+                            <option value="Mon 9pm-10pm">Mon 9pm-10pm</option>
+                            <option value="Mon 10pm-11pm">Mon 10pm-11pm</option>
+                            <option value="Mon 11pm-12am">Mon 11pm-12am</option>
+                          </optgroup>
+                          <optgroup label="Wednesday">
+                            <option value="Wed 7pm-8pm">Wed 7pm-8pm</option>
+                            <option value="Wed 8pm-9pm">Wed 8pm-9pm</option>
+                            <option value="Wed 9pm-10pm">Wed 9pm-10pm</option>
+                            <option value="Wed 10pm-11pm">Wed 10pm-11pm</option>
+                            <option value="Wed 11pm-12am">Wed 11pm-12am</option>
+                          </optgroup>
+                        </select>
+                        <label>Timeslots</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="instum" multiple>
+                            <option value="Vocals">Vocals</option>
+                            <option value="Guitar">Guitar</option>
+                            <option value="Bass">Bass</option>
+                            <option value="Drums">Drums</option>
+                        </select>
+                        <label>Instrument(s)</label>
+                    </div>
+                        
+                    <div class="modal-footer">
+                        <a id="submitBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!--Carousel-->
+        <div class="row" id="carousel">
+            <div class="container hide-on-med-and-down">
+                <div class="carousel carousel-slider center">
+                    <div class="carousel-item black-text" id="bluebird-carousel">
+                        <h2 class="hide-on-med-and-down">The Bluebird Cafe</h2>
+                        <img src="./Assets/Images/Bluebird.jpg" class="responsive-img center-align" id="carousel-img" alt="The Bluebird Cafe exterior view">
+                        <h5 id="carousel-text" class="white-text carousel-fixed-item">The Bluebird Café is a 90-seat music club in Nashville, Tennessee that opened in 1982. The club features acoustic music performed by both established singer-songwriters, and cover artists.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#modal2'>Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item black-text" id="nick-carousel">
+                        <h2 class="hide-on-med-and-down">The Nick</h2>
+                        <img src="./Assets/Images/TheNick.jpg" class="responsive-img center-align" id="carousel-img" alt="The Nick interior view">
+                        <h5 id="carousel-text" class="white-text  carousel-fixed-item">The Nick is a bar and live music venue at 2514 10th Avenue South in Southside. The self-proclaimed "dirty little secret" hosts local and national rock acts.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#modal1'>Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item black-text" id="smith-carousel">
+                        <h2 class="hide-on-med-and-down">Smith's Olde Bar</h2>
+                        <img src="./Assets/Images/Smiths.jpg" class="responsive-img center-align"id="carousel-img" alt="Smith's Olde Bar exterior">
+                        <h5 id="carousel-text" class="white-text carousel-fixed-item">Founded by Dan Nolen and Mike Reeves, Smith`s Olde Bar opened its doors in 1994 and has continued to be one of Atlanta`s most historic music venues, having hosted some of the most prominent names in music today including David Bowie, Train, Tom Morello of Rage Against The Machine, Bush, and  Band of Horses.</h5>
+                        <div class="carousel-fixed-item center">
+                            <a class='waves-effect waves-light btn modal-trigger' href='#modal3'>Sign Up</a>
+                        </div>
+                    </div>
+
+                </div>
 
     <div id="modal3" class="modal">
         <div class="modal-content">
