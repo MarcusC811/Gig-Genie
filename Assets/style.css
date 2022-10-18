@@ -3,6 +3,10 @@ body {
     padding:0;
 }
 
+.modal {
+    max-height: 80%;
+}
+
 #map {
     position:absolute;
     margin-top: 5%;
@@ -14,6 +18,23 @@ body {
     height: 25%;
 }
 
+
+#carousel {
+    margin-top: 60%;
+    margin-bottom: 2%;
+}
+
+#carousel-text {
+    border-style:solid;
+    margin: 10%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.578);
+}
+
+#carousel-img {
+    opacity: 70%;
+}
+
 #application{
     position: absolute;
     bottom: 25;
@@ -21,16 +42,8 @@ body {
     height: 30%;
 }
 
-.leaflet-popup-content img {
-    max-width: 100%;
-}
-
-
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+#nick-c {
+    opacity: 70%;
 }
 
 .brand-logo img {
