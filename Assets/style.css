@@ -25,10 +25,11 @@ body {
     max-width: 100%;
 }
 
-#submitBtnDiv{
-    width: 100%;
+.white-text{
+    width: 120%;
     display: flex;
     justify-content: center;
+    margin-left: 45%;
 }
 
 footer {
@@ -36,3 +37,10 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.brand-logo img {
+height: 15%;
+width: 13%;
+}
+
+

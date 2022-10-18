@@ -16,8 +16,9 @@
 <body>
     <!-- Nav Bar -->
     <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Gig Genie</a>
+        <div 
+        class="nav-wrapper blue">
+          <a href="#" class="brand-logo"><img src="./Assets/Images/Gig Genie.png" alt=" Gig Genie logo"></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Birmingham</a></li>
             <li><a href="badges.html">Nashville</a></li>
@@ -33,102 +34,43 @@
    <div class="container">
         <div id='map' class="dark"></div>
     </div> 
-
-    <!-- class="input-field col s6" -->
-     <div class="row">
-        <form class="col s12" id="application">
-            <div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="artist_name">Artist Name</label>
-                        <input id="artist_name" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s6">
-                        <label for="Genre">Genre</label>
-                        <input id="Genre" type="text" class="validate">
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="email">Email</label>
-                        <input id="email" type="text" class="validate">
-                    </div>
-                    <!-- Timeslots -->
-                    <div class="input-field col s6">
-                        <label for="location">Location</label>
-                        <input id="location" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Vocals</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Guitar</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Bass</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Drums</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Keys</span>
-                        </label>
-                    </p>
-                    <p class="col s6">
-                        <label>
-                          <input type="checkbox" class="filled-in"/>
-                          <span>Bass</span>
-                        </label>
-                    </p>
-                </div>
-
-                <div id="submitBtnDiv">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="subBtn">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div> 
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <img src="./Assets/Images/Bluebird.jpg">
+            <span class="card-title">Card Title</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+     
     <!-- Footer -->
-    <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-        </div>
-         <div class="col l4 offset-l2 s12"> 
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <footer class="page-footer blue">
       <div class="container">
-      © 2022 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">Contact us</a>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Gig Genie - Where the Magic Happens!</h5>
+          
+          </div>
+          
+        </div>
       </div>
-    </div>
-    <footer class="page-footer">
-  </footer> 
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">Contact us</a>
+        </div>
+      </div>
+    </footer>
+        
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
   <script src="./Assets/script.js"></script>
